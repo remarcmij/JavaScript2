@@ -1,4 +1,4 @@
-/**
+/*
  
  ** Exercise 1: Add Six **
  
@@ -8,9 +8,9 @@ return a closure, that adds a number to the base number argument.
 Call the function three times. The return values should be:
  15, 24, 33
 
- */
+*/
 
-function createBase( /* ???? */ ) {
+function createBase(/* ???? */) {
   // Put here your logic...
 }
 

@@ -1,8 +1,8 @@
-/**
+/*
   
  ** Exercise 1: The book list **
 
-  I 'd like to display my three favorite books inside a nice webpage!
+  I'd like to display my three favorite books inside a nice webpage!
 
   1. Iterate through the array of books.
   2. For each book, create a `<p>`
@@ -14,29 +14,30 @@
   The end result should look something like this:
   https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
-  */
+*/
 
 function createBookList(books) {
   // your code goes in here, return the ul element
 }
 
-const books = [{
+const myBooks = [
+  {
     title: 'The Design of Everyday Things',
     author: 'Don Norman',
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: 'The Most Human Human',
     author: 'Brian Christian',
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: 'The Pragmatic Programmer',
     author: 'Andrew Hunt',
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
-let ulElement = createBookList(books);
+const ulElement = createBookList(myBooks);
 
-document.querySelector("#bookList").appendChild(ulElement);
+// document.querySelector('#bookList').appendChild(ulElement);

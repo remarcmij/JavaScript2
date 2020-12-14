@@ -1,0 +1,26 @@
+{
+  "Week 1": [
+    "ex1-bookList",
+    "ex2-aboutMe",
+    "ex3-hijackLogo",
+    "ex4-whatsTheTime",
+    "ex5-catWalk",
+    "project"
+  ],
+  "Week 2": [
+    "ex1-oddOnesOut",
+    "ex2-whatsYourMondayWorth",
+    "ex3-lemonAllergy",
+    "ex4-collectiveAge",
+    "ex5-myFavoriteHobbies",
+    "project"
+  ],
+  "Week 3": [
+    "ex1-AddSix",
+    "ex2-RemoveDuplicates",
+    "ex3-GuessTheOutput",
+    "ex4-GuessMore",
+    "ex5-LotteryMachine",
+    "project"
+  ]
+}

@@ -4,21 +4,7 @@
   "description": "HYF JavaScript2 module",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint \"**/homework/**/*.js\"",
-    "test": "npm run lint",
-    "test-week1": "eslint Week1/homework",
-    "test-week2": "eslint Week2/homework && jest Week2",
-    "test-week3": "eslint Week3/homework && jest Week3",
-    "test-maartjes-work": "jest maartjes-work",
-    "test-map-filter": "jest map-filter",
-    "test-step2-1": "jest step2-1",
-    "test-step2-2": "jest step2-2",
-    "test-step2-3": "jest step2-3",
-    "test-step2-4": "jest step2-4",
-    "test-step2-5": "jest step2-5",
-    "test-step2-6": "jest step2-6",
-    "test-step3": "jest step3",
-    "test-step3-bonus": "jest step3-bonus"
+    "test": "node ./test-menu"
   },
   "repository": {
     "type": "git",
@@ -40,7 +26,14 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "jest": "^25.1.0",
+    "jest": "^25.5.4",
     "prettier": "^1.15.2"
+  },
+  "dependencies": {
+    "html-validate": "^4.0.2",
+    "inquirer": "^7.3.3",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^5.5.0",
+    "serve": "^11.3.2"
   }
 }

@@ -1,4 +1,4 @@
-/**
+/*
 
  ** Exercise 1: The odd ones out **
 
@@ -6,7 +6,7 @@
  Avoid using for loop or forEach.
  The function should still behave the same.
 
- */
+*/
 function doubleEvenNumbers(numbers) {
   const newNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
