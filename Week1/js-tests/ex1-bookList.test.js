@@ -35,9 +35,12 @@ describe('Generated HTML', () => {
   });
 
   test('should contain an unordered list', async () => {
-    const ul = await page.evaluate(
-      () => document.querySelector('ul > li').outerHTML
+    const textContent = await page.evaluate(() => {
+      const elem = document.querySelector('div[id=bookList] > ul');
+      return elem ? elem.textContent : '';
+    });
+    expect(textContent).toEqual(
+      expect.stringContaining('The Design of Everyday Things')
     );
-    console.log(ul);
   });
 });
