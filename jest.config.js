@@ -3,4 +3,5 @@
 
 module.exports = {
   preset: 'jest-puppeteer',
+  maxConcurrency: 1,
 };

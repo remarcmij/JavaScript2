@@ -34,13 +34,48 @@ describe('Generated HTML', () => {
     expect(validationReport).toBe('');
   });
 
-  test('should contain an unordered list', async () => {
-    const textContent = await page.evaluate(() => {
-      const elem = document.querySelector('div[id=bookList] > ul');
-      return elem ? elem.textContent : '';
+  test('should contain a <ul> with 3 <li> elements', async () => {
+    const result = await page.evaluate(() => {
+      const nodeList = document.querySelectorAll('div[id=bookList] > ul > li');
+      return nodeList ? nodeList.length : 0;
     });
-    expect(textContent).toEqual(
-      expect.stringContaining('The Design of Everyday Things')
-    );
+    expect(result).toBe(3);
+  });
+
+  test('each <li> should contain a book title and author', async () => {
+    const result = await page.evaluate(() => {
+      const nodeList = document.querySelectorAll('div[id=bookList] > ul > li');
+      return nodeList
+        ? Array.from(nodeList)
+            .map(node => node.textContent)
+            .join(', ')
+        : '';
+    });
+    expect(result).toMatch(/The Design of Everyday Things/);
+    expect(result).toMatch(/Don Norman/);
+    expect(result).toMatch(/The Most Human Human/);
+    expect(result).toMatch(/Brian Christian/);
+    expect(result).toMatch(/The Pragmatic Programmer/);
+    expect(result).toMatch(/Andrew Hunt/);
+  });
+
+  test('each <li> should contain an <img> element', async () => {
+    const result = await page.evaluate(() => {
+      const nodeList = document.querySelectorAll(
+        'div[id=bookList] > ul > li img'
+      );
+      return nodeList ? nodeList.length : 0;
+    });
+    expect(result).toBe(3);
+  });
+
+  test('each <li> should contain an <img> element', async () => {
+    const result = await page.evaluate(() => {
+      const nodeList = document.querySelectorAll(
+        'div[id=bookList] > ul > li img'
+      );
+      return nodeList ? nodeList.length : 0;
+    });
+    expect(result).toBe(3);
   });
 });
