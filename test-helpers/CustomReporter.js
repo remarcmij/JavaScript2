@@ -17,7 +17,6 @@ class MyCustomReporter {
 
   onRunComplete(contexts, results) {
     results.testResults.forEach(async ({ testFilePath, testResults }) => {
-      console.error(__dirname);
       const baseName = path.basename(testFilePath, '.test.js');
       const reportDir = path.join(__dirname, '../test-reports');
 
