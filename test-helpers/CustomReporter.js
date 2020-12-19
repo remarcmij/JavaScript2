@@ -10,11 +10,6 @@ async function unlink(path) {
 }
 
 class MyCustomReporter {
-  constructor(globalConfig, options) {
-    this._globalConfig = globalConfig;
-    this._options = options;
-  }
-
   onRunComplete(contexts, results) {
     results.testResults.forEach(async ({ testFilePath, testResults }) => {
       const baseName = path.basename(testFilePath, '.test.js');
