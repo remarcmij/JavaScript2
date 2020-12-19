@@ -15,8 +15,8 @@ class MyCustomReporter {
       const baseName = path.basename(testFilePath, '.test.js');
       const reportDir = path.join(__dirname, '../test-reports');
 
-      const voidFilePath = path.join(reportDir, `${baseName}.void.md`);
-      await unlink(voidFilePath);
+      const todoFilePath = path.join(reportDir, `${baseName}.todo.md`);
+      await unlink(todoFilePath);
 
       const passFilePath = path.join(reportDir, `${baseName}.pass.md`);
       await unlink(passFilePath);
