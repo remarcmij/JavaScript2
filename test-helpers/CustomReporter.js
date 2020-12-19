@@ -21,13 +21,13 @@ class MyCustomReporter {
       const baseName = path.basename(testFilePath, '.test.js');
       const reportDir = path.join(__dirname, '../test-reports');
 
-      const voidFilePath = path.join(reportDir, `${baseName}.void.log`);
+      const voidFilePath = path.join(reportDir, `${baseName}.void.md`);
       await unlink(voidFilePath);
 
-      const passFilePath = path.join(reportDir, `${baseName}.pass.log`);
+      const passFilePath = path.join(reportDir, `${baseName}.pass.md`);
       await unlink(passFilePath);
 
-      const failFilePath = path.join(reportDir, `${baseName}.fail.log`);
+      const failFilePath = path.join(reportDir, `${baseName}.fail.md`);
       await unlink(failFilePath);
 
       const failedTestResults = testResults.filter(
@@ -45,7 +45,7 @@ class MyCustomReporter {
           .map(testResult => testResult.fullName)
           .join('\n');
         console.error(report);
-        await fs.writeFile(failFilePath, report, 'utf8');
+        await fs.writeFile(failFilePath, '```\n' + report + '\n```', 'utf8');
       }
     });
   }
