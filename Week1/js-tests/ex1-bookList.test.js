@@ -42,7 +42,7 @@ describe('Generated HTML', () => {
     expect(result).toBe(3);
   });
 
-  test('each <li> should contain a book title and author', async () => {
+  test('should include an <li> with title and author for each book', async () => {
     const result = await page.evaluate(() => {
       const nodeList = document.querySelectorAll('div[id=bookList] > ul > li');
       return nodeList
@@ -59,17 +59,7 @@ describe('Generated HTML', () => {
     expect(result).toMatch(/Andrew Hunt/);
   });
 
-  test('each <li> should contain an <img> element', async () => {
-    const result = await page.evaluate(() => {
-      const nodeList = document.querySelectorAll(
-        'div[id=bookList] > ul > li img'
-      );
-      return nodeList ? nodeList.length : 0;
-    });
-    expect(result).toBe(3);
-  });
-
-  test('each <li> should contain an <img> element', async () => {
+  test('should include an <img> element for each book', async () => {
     const result = await page.evaluate(() => {
       const nodeList = document.querySelectorAll(
         'div[id=bookList] > ul > li img'

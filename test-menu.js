@@ -25,7 +25,9 @@ async function main() {
       },
     ]);
     console.log('Running test, please wait...');
-    execSync(`npx jest ${exercise} --colors --noStackTrace --verbose false`);
+    execSync(
+      `npx jest ${exercise} --silent false --verbose false --reporters="./test-helpers/CustomReporter.js"`
+    );
   } catch (_) {
     console.log('There were errors.');
   }
