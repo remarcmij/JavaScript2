@@ -21,13 +21,13 @@ class MyCustomReporter {
       const baseName = path.basename(testFilePath, '.test.js');
       const reportDir = path.join(__dirname, '../test-reports');
 
-      const voidFilePath = path.join(reportDir, `${baseName}.void.md`);
+      const voidFilePath = path.join(reportDir, `${baseName}.void.log`);
       await unlink(voidFilePath);
 
-      const passFilePath = path.join(reportDir, `${baseName}.pass.md`);
+      const passFilePath = path.join(reportDir, `${baseName}.pass.log`);
       await unlink(passFilePath);
 
-      const failFilePath = path.join(reportDir, `${baseName}.fail.md`);
+      const failFilePath = path.join(reportDir, `${baseName}.fail.log`);
       await unlink(failFilePath);
 
       const failedTestResults = testResults.filter(
