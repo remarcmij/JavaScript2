@@ -1,0 +1,15 @@
+*** Unit Test Report ***
+
+Generated HTML should be syntactically valid
+Generated HTML should contain a <ul> with 3 <li> elements
+Generated HTML should include an <li> with title and author for each book
+Generated HTML should include an <img> element for each book
+
+*** ESLint Report ***
+
+C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\index.js
+  19:25  error  'books' is defined but never used               no-unused-vars
+  41:7   error  'ulElement' is assigned a value but never used  no-unused-vars
+
+✖ 2 problems (2 errors, 0 warnings)
+

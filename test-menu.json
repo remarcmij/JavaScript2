@@ -1,26 +1,26 @@
 {
-  "Week 1": [
-    "ex1-bookList",
-    "ex2-aboutMe",
-    "ex3-hijackLogo",
-    "ex4-whatsTheTime",
-    "ex5-catWalk",
-    "project"
-  ],
-  "Week 2": [
-    "ex1-oddOnesOut",
-    "ex2-whatsYourMondayWorth",
-    "ex3-lemonAllergy",
-    "ex4-collectiveAge",
-    "ex5-myFavoriteHobbies",
-    "project"
-  ],
-  "Week 3": [
-    "ex1-AddSix",
-    "ex2-RemoveDuplicates",
-    "ex3-GuessTheOutput",
-    "ex4-GuessMore",
-    "ex5-LotteryMachine",
-    "project"
-  ]
+  "Week 1": {
+    "ex1-bookList": "./Week1/js-exercises/ex1-bookList",
+    "ex2-aboutMe": "./Week1/js-exercises/ex2-aboutMe",
+    "ex3-hijackLogo": "./Week1/js-exercises/ex3-hijackLogo",
+    "ex4-whatsTheTime": "./Week1/js-exercises/ex4-whatsTheTime",
+    "ex5-catWalk": "./Week1/js-exercises/ex5-catWalk",
+    "project-wk1": "./Week1/project/"
+  },
+  "Week 2": {
+    "ex1-oddOnesOut": "./Week2/js-exercises/ex1-oddOnesOut",
+    "ex2-whatsYourMondayWorth": "./Week2/js-exercises/x2-whatsYourMondayWorth",
+    "ex3-lemonAllergy": "./Week2/js-exercises/ex3-lemonAllerg",
+    "ex4-collectiveAge": "./Week2/js-exercises/ex4-collectiveAge",
+    "ex5-myFavoriteHobbies": "./Week2/js-exercises/ex5-myFavoriteHobbies",
+    "project-wk2": "./Week2/project/"
+  },
+  "Week 3": {
+    "ex1-AddSix": "./Week3/js-exercises/ex1-AddSix",
+    "ex2-RemoveDuplicates": "./Week3/js-exercises/ex2-RemoveDuplicates",
+    "ex3-GuessTheOutput": "./Week3/js-exercises/ex3-GuessTheOutput",
+    "ex4-GuessMore": "./Week3/js-exercises/ex4-GuessMore",
+    "ex5-LotteryMachine": "./Week3/js-exercises/ex5-LotteryMachine",
+    "project-wk3": "./Week3/project/"
+  }
 }
