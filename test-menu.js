@@ -55,28 +55,36 @@ function selectExercise(exercises) {
   ]);
 }
 
-async function main() {
-  const { week } = await selectWeek();
-  const exercises = menu[week];
-  const { name } = await selectExercise(exercises);
-
-  let report = '';
-  console.log('\nRunning test, please wait...\n');
-
+function execJest(name) {
   try {
     execSync(
       `npx jest ${name} --silent false --verbose false --reporters="./test-helpers/CustomReporter.js"`,
       { encoding: 'utf8' }
     );
+    return '';
   } catch (err) {
-    report += `*** Unit Test Report ***\n\n${err.stdout}`;
+    return `*** Unit Test Report ***\n\n${err.stdout}`;
   }
+}
 
+function execESLint(path) {
   try {
-    execSync(`npx eslint ${exercises[name]}`, { encoding: 'utf8' });
+    execSync(`npx eslint ${path}`, { encoding: 'utf8' });
+    return '';
   } catch (err) {
-    report += `\n*** ESLint Report ***\n${err.stdout}`;
+    return `\n*** ESLint Report ***\n${err.stdout}`;
   }
+}
+
+async function main() {
+  const { week } = await selectWeek();
+  const exercises = menu[week];
+  const { name } = await selectExercise(exercises);
+
+  console.log('\nRunning test, please wait...\n');
+
+  let report = execJest(name);
+  report += execESLint(exercises[name]);
 
   const message = await writeReport(name, report);
   console.log(message);
