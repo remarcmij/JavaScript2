@@ -44,10 +44,8 @@ function selectWeek() {
   ]);
 }
 
-async function main() {
-  const { week } = await selectWeek();
-  const exercises = menu[week];
-  const { name } = await inquirer.prompt([
+function selectExercise(exercises) {
+  return inquirer.prompt([
     {
       type: 'list',
       name: 'name',
@@ -55,6 +53,12 @@ async function main() {
       choices: Object.keys(exercises),
     },
   ]);
+}
+
+async function main() {
+  const { week } = await selectWeek();
+  const exercises = menu[week];
+  const { name } = await selectExercise(exercises);
 
   let report = '';
   console.log('\nRunning test, please wait...\n');
