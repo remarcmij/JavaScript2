@@ -8,7 +8,19 @@ class MyCustomReporter {
 
       if (failedTestResults.length !== 0) {
         report += failedTestResults
-          .map((testResult) => testResult.fullName)
+          .map(({ fullName, failureDetails }) => {
+            let message = fullName;
+            // Extra custom error messages can be passed by expecting an empty
+            // string and passing the messages as the actual value in a
+            // unit test, e.g.:
+            // expect(messages).toBe('')
+            message += failureDetails.map(({ error }) => {
+              return error.matcherResult.expected === ''
+                ? error.matcherResult.actual
+                : '';
+            });
+            return message;
+          })
           .join('\n');
       }
     });

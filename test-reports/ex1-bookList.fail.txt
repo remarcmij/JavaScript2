@@ -1,6 +1,12 @@
 *** Unit Test Report ***
 
 Generated HTML should be syntactically valid
+inline
+  11:8   error  Element <div> is not permitted as content in <h1>  element-permitted-content
+  12:13  error  <h2> cannot be empty, must have text content       empty-heading
+
+✖ 2 problems (2 errors, 0 warnings)
+
 Generated HTML should contain a <ul> with 3 <li> elements
 Generated HTML should include an <li> with title and author for each book
 Generated HTML should include an <img> element for each book

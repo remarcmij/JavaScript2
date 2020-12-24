@@ -47,7 +47,7 @@ describe('Generated HTML', () => {
       const nodeList = document.querySelectorAll('div[id=bookList] > ul > li');
       return nodeList
         ? Array.from(nodeList)
-            .map(node => node.textContent)
+            .map((node) => node.textContent)
             .join(', ')
         : '';
     });
