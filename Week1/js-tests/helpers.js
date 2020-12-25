@@ -10,6 +10,11 @@ const config = {
 };
 
 async function copyFiles(exerciseDirName) {
+  try {
+    await fs.mkdir('./temp');
+  } catch (_) {
+    // ignore
+  }
   const exercisesDir = path.join(__dirname, '../js-exercises', exerciseDirName);
   await fs.copyFile(path.join(exercisesDir, 'index.html'), './temp/index.html');
   await fs.copyFile(path.join(exercisesDir, 'index.js'), './temp/index.js');
