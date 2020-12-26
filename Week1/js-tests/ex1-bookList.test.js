@@ -1,9 +1,18 @@
-const { copyFiles, setUp, validateHTML } = require('./helpers');
+const {
+  copyFiles,
+  setUp,
+  validateHTML,
+  deleteFiles,
+} = require('../../test-helpers/helpers');
 
 describe('Generated HTML', () => {
   beforeAll(async () => {
-    await copyFiles('ex1-bookList');
+    await copyFiles('./Week1/js-exercises/ex1-bookList');
     await setUp(page);
+  });
+
+  afterAll(() => {
+    deleteFiles();
   });
 
   test('should be syntactically valid', validateHTML);

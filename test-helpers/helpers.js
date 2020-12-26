@@ -1,23 +1,33 @@
 const fs = require('fs').promises;
-const path = require('path');
+const util = require('util');
+const _copy = require('recursive-copy');
+const _rimraf = require('rimraf');
 const { HtmlValidate } = require('html-validate');
 const { getFormatter } = require('html-validate/dist/cli/formatter');
 const stylish = getFormatter('stylish');
+
+const copy = util.promisify(_copy);
+const rimraf = util.promisify(_rimraf);
 
 const config = {
   baseUrl: 'http://localhost:5000/',
   blockedResourceTypes: ['image', 'stylesheet', 'font'],
 };
 
-async function copyFiles(exerciseDirName) {
+async function copyFiles(exercisesDir) {
   try {
     await fs.mkdir('./temp');
-  } catch (_) {
-    // ignore
+  } catch (err) {
+    if (err.code !== 'EEXIST') {
+      throw err;
+    }
   }
-  const exercisesDir = path.join(__dirname, '../js-exercises', exerciseDirName);
-  await fs.copyFile(path.join(exercisesDir, 'index.html'), './temp/index.html');
-  await fs.copyFile(path.join(exercisesDir, 'index.js'), './temp/index.js');
+
+  return copy(exercisesDir, './temp', { overwrite: true });
+}
+
+function deleteFiles() {
+  return rimraf('./temp');
 }
 
 async function setUp(page) {
@@ -49,6 +59,7 @@ async function validateHTML() {
 
 module.exports = {
   copyFiles,
+  deleteFiles,
   setUp,
   validateHTML,
 };
