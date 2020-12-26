@@ -6,7 +6,8 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: 'eslint:recommended',
+  plugins: ['prettier'],
+  extends: ['eslint:recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
   },
@@ -17,6 +18,7 @@ module.exports = {
     jestPuppeteer: true,
   },
   rules: {
+    'prettier/prettier': 'warn',
     'no-console': 'off',
   },
 };
