@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     'no-console': 'off',
+    eqeqeq: ['warn', 'always', { null: 'ignore' }],
   },
 };
