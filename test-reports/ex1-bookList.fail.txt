@@ -23,3 +23,9 @@ C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\in
 ✖ 3 problems (2 errors, 1 warning)
   0 errors and 1 warning potentially fixable with the `--fix` option.
 
+
+*** Spell Checker Report ***
+C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\index.js:15:26 - Unknown word (makeme)
+C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\index.js:15:42 - Unknown word (herokuapp)
+C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\index.pass.js:15:26 - Unknown word (makeme)
+C:\Users\jimcr\dev\hackyourfuture\JavaScript2\Week1\js-exercises\ex1-bookList\index.pass.js:15:42 - Unknown word (herokuapp)

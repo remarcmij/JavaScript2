@@ -76,6 +76,15 @@ function execESLint(path) {
   }
 }
 
+function execSpellChecker(path) {
+  try {
+    execSync(`npx cspell "${path}/**/*.js"`);
+    return '';
+  } catch (err) {
+    return `\n*** Spell Checker Report ***\n\n${err.stdout}`;
+  }
+}
+
 async function main() {
   const { week } = await selectWeek();
   const exercises = menu[week];
@@ -85,6 +94,7 @@ async function main() {
 
   let report = execJest(name);
   report += execESLint(exercises[name]);
+  report += execSpellChecker(exercises[name]);
 
   const message = await writeReport(name, report);
   console.log(message);
